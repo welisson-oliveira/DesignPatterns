@@ -1,11 +1,13 @@
 package br.com.welisson.designPatterns.templateMethod.exercice2;
 
+import org.junit.Assert;
+import org.junit.Test;
+
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
-
-import org.junit.Assert;
-import org.junit.Test;
 
 public class TesteRelatorio {
 	
@@ -50,7 +52,7 @@ public class TesteRelatorio {
 		banco.addConta(conta2);
 		
 		String resposta = new RelatorioComplexo().gerar(banco);
-		
+		String dataAtual = LocalDate.now().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")).toString();
 		String esperado = "Nome: Santander\n"+
 				"Endereço: Endereco\n"+
 				"Telefone: 1234-1234\n"+
@@ -63,7 +65,7 @@ public class TesteRelatorio {
 				"\n"+
 				"-------------------------------------\n"+
 				"Email: email@email.com\n"+
-				"Data atual: 05/08/2017\n";
+				"Data atual: "+dataAtual+"\n";
 		
 		System.out.println("\nComplexo: \n\n"+resposta+"\n\n");
 		Assert.assertEquals(resposta, esperado);

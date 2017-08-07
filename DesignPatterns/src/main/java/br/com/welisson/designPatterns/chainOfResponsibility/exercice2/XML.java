@@ -2,7 +2,6 @@ package br.com.welisson.designPatterns.chainOfResponsibility.exercice2;
 
 public class XML implements Resposta {
 
-	@Override
 	public String responde(Requisicao requisicao, Conta conta, Resposta nextResposta) {
 		if(podeResponder(requisicao)){
 			GeradorDeResposta gerarResposta = new GeraXML();
@@ -16,7 +15,6 @@ public class XML implements Resposta {
 
 	}
 
-	@Override
 	public boolean podeResponder(Requisicao requisicao) {
 		return requisicao.getFormato().equals(Formato.XML);
 	}
