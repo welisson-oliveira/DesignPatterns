@@ -37,7 +37,6 @@ public class TesteRelatorio {
 							"Nome: Santander\n"+
 							"Telefone: 1234-1234\n";
 		
-		System.out.println("\nSimples: \n\n"+resposta+"\n\n");
 		Assert.assertEquals(resposta, esperado);
 	}
 	
@@ -67,7 +66,6 @@ public class TesteRelatorio {
 				"Email: email@email.com\n"+
 				"Data atual: "+dataAtual+"\n";
 		
-		System.out.println("\nComplexo: \n\n"+resposta+"\n\n");
 		Assert.assertEquals(resposta, esperado);
 	}
 	

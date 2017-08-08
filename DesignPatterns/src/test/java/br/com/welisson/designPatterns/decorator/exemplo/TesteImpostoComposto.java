@@ -1,15 +1,15 @@
 package br.com.welisson.designPatterns.decorator.exemplo;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-
-import org.junit.Assert;
-import org.junit.Test;
-
 import br.com.welisson.designPatterns.decorator.exemple.CalculadorDeImposto;
 import br.com.welisson.designPatterns.decorator.exemple.ICCC;
 import br.com.welisson.designPatterns.decorator.exemple.ICMS;
 import br.com.welisson.designPatterns.decorator.exemple.ImpostoMuitoAlto;
 import br.com.welisson.designPatterns.decorator.exemple.Orcamento;
+import org.hamcrest.CoreMatchers;
+import org.junit.Assert;
+import org.junit.Test;
+
+import static org.hamcrest.CoreMatchers.equalTo;
 
 public class TesteImpostoComposto {
 	
@@ -27,8 +27,7 @@ public class TesteImpostoComposto {
 		CalculadorDeImposto calculadorDeICMS = new CalculadorDeImposto(orcamento, new ICMS());
 		double icms = calculadorDeICMS.calculaImposto();
 		
-		System.out.println(calculaImposto);
-		Assert.assertThat(calculaImposto, equalTo((iccc + icms)));
+		Assert.assertThat(calculaImposto, equalTo(iccc + icms));
 	}
 	
 	@Test
@@ -48,7 +47,6 @@ public class TesteImpostoComposto {
 		CalculadorDeImposto calculadorDeImpostoMuitoAlto = new CalculadorDeImposto(orcamento, new ImpostoMuitoAlto());
 		double ima = calculadorDeImpostoMuitoAlto.calculaImposto();
 		
-		System.out.println(calculaImposto);
 		Assert.assertThat(calculaImposto, equalTo((iccc + icms + ima)));
 	}
 }
