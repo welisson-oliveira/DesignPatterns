@@ -5,11 +5,11 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import org.junit.Assert;
 import org.junit.Test;
 
-import br.com.welisson.designPatterns.strategy.exemplo.CalculadorDeImpostos;
-import br.com.welisson.designPatterns.strategy.exemplo.ICMS;
-import br.com.welisson.designPatterns.strategy.exemplo.ISS;
-import br.com.welisson.designPatterns.strategy.exemplo.Imposto;
-import br.com.welisson.designPatterns.strategy.exemplo.Orcamento;
+import br.com.welisson.designPatterns.strategy.example.CalculadorDeImpostos;
+import br.com.welisson.designPatterns.strategy.example.ICMS;
+import br.com.welisson.designPatterns.strategy.example.ISS;
+import br.com.welisson.designPatterns.strategy.example.Imposto;
+import br.com.welisson.designPatterns.strategy.example.Orcamento;
 
 public class TesteDeImposto {
 	
