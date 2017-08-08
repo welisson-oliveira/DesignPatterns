@@ -1,4 +1,4 @@
-package br.com.welisson.designPatterns.builder.example.certo;
+package br.com.welisson.designPatterns.observer.example.errado;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -46,6 +46,33 @@ public class NotaFiscalBuilder {
 	}
 
 	public NotaFiscal builder(){
-		return new NotaFiscal(razaoSocial,cnpj, data, valorBruto, impostos, todosItens, observacoes);
+		final NotaFiscal notaFiscal = new NotaFiscal(razaoSocial, cnpj, data, valorBruto, impostos, todosItens,
+				observacoes);
+
+		// invocando as ações posteriores
+		enviaPorEmail(notaFiscal);
+		salvaNoBanco(notaFiscal);
+		enviaPorSms(notaFiscal);
+		imprime(notaFiscal);
+
+		return notaFiscal;
+	}
+
+
+	//exutam após construir o objeto
+	private void enviaPorEmail(NotaFiscal notaFiscal) {
+		System.out.println("enviando por e-mail");
+	}
+
+	private void salvaNoBanco(NotaFiscal notaFiscal) {
+		System.out.println("salvando no banco");
+	}
+
+	private void enviaPorSms(NotaFiscal notaFiscal) {
+		System.out.println("enviando por sms");
+	}
+
+	private void imprime(NotaFiscal notaFiscal) {
+		System.out.println("imprimindo notaFiscal");
 	}
 }

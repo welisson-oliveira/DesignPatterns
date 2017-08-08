@@ -1,6 +1,7 @@
-package br.com.welisson.designPatterns.builder.example.certo;
+package br.com.welisson.designPatterns.observer.exercice1;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -17,6 +18,18 @@ public class NotaFiscalBuilder {
 	private double impostos;
 	private LocalDate data;
 	private String observacoes;
+
+	private List<AcaoAposGerarNota> acoes;
+
+	public NotaFiscalBuilder(List<AcaoAposGerarNota> acoes){
+		this.acoes = acoes;
+		this.todosItens = new ArrayList<>();
+	}
+
+
+	public void addAcao(AcaoAposGerarNota acao){
+		acoes.add(acao);
+	}
 
 	public NotaFiscalBuilder paraEmpresa(String razaoSocial) {
 		this.razaoSocial = razaoSocial;
@@ -46,6 +59,12 @@ public class NotaFiscalBuilder {
 	}
 
 	public NotaFiscal builder(){
-		return new NotaFiscal(razaoSocial,cnpj, data, valorBruto, impostos, todosItens, observacoes);
+		final NotaFiscal notaFiscal = new NotaFiscal(razaoSocial, cnpj, data, valorBruto, impostos, todosItens,
+				observacoes);
+
+		acoes.stream().forEach(acao -> acao.executa(notaFiscal));
+
+		return notaFiscal;
 	}
+
 }

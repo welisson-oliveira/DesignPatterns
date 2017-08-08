@@ -1,4 +1,4 @@
-package br.com.welisson.designPatterns.builder.example.certo;
+package br.com.welisson.designPatterns.observer.example.errado;
 
 /**
  * {@link Teste}

@@ -1,6 +1,7 @@
 package br.com.welisson.designPatterns.builder.exercice1;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -18,6 +19,11 @@ public class NotaFiscalBuilder {
 	private LocalDate data;
 	private String observacoes;
 
+	public NotaFiscalBuilder(){
+		this.data = LocalDate.now();
+		todosItens = new ArrayList<>();
+	}
+
 	public NotaFiscalBuilder paraEmpresa(String razaoSocial) {
 		this.razaoSocial = razaoSocial;
 		return this;
@@ -28,7 +34,7 @@ public class NotaFiscalBuilder {
 		return this;
 	}
 
-	public NotaFiscalBuilder addItem(ItemDaNota item){
+	public NotaFiscalBuilder com(ItemDaNota item){
 		todosItens.add(item);
 		valorBruto += item.getValor();
 		impostos += item.getValor() * 0.05;
@@ -41,7 +47,7 @@ public class NotaFiscalBuilder {
 	}
 
 	public NotaFiscalBuilder naData(LocalDate data){
-		this.data = data != null ? data : LocalDate.now() ;
+		this.data = data;
 		return this;
 	}
 

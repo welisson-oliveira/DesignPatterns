@@ -11,9 +11,9 @@ public class Teste2 {
 		NotaFiscal criador = new NotaFiscalBuilder()
 		.paraEmpresa("Caelum")
 		.comCnpj("123.456.789/0001-00")
-		.addItem(new ItemDaNota("item 1", 100.0))
-		.addItem(new ItemDaNota("item 2", 200.0))
-		.addItem(new ItemDaNota("item 3", 300.0))
+		.com(new ItemDaNota("item 1", 100.0))
+		.com(new ItemDaNota("item 2", 200.0))
+		.com(new ItemDaNota("item 3", 300.0))
 		.comObservacoes("entregar nf pessoalmente")
 		.naDataAtual().builder();
 	}

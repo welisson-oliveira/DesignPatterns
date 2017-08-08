@@ -1,4 +1,4 @@
-package br.com.welisson.designPatterns.builder.exercice1;
+package br.com.welisson.designPatterns.observer.example.errado;
 
 /**
  * {@link Teste2}
@@ -14,6 +14,7 @@ public class Teste2 {
 		.com(new ItemDaNota("item 1", 100.0))
 		.com(new ItemDaNota("item 2", 200.0))
 		.com(new ItemDaNota("item 3", 300.0))
-		.comObservacoes("entregar nf pessoalmente").builder();
+		.comObservacoes("entregar nf pessoalmente")
+		.naDataAtual().builder();
 	}
 }
