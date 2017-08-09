@@ -1,4 +1,4 @@
-package br.com.welisson.designPatterns.flyweight;
+package br.com.welisson.designPatterns.flyweight.exercice1;
 
 import java.util.Arrays;
 import java.util.List;

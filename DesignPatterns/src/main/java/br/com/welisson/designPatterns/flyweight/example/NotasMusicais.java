@@ -1,4 +1,4 @@
-package br.com.welisson.designPatterns.flyweight;
+package br.com.welisson.designPatterns.flyweight.example;
 
 import java.util.HashMap;
 import java.util.Map;
